@@ -12,7 +12,7 @@ FROM scratch
 
 WORKDIR /app
 
-COPY --from=builder compiled_app .
-COPY --from=builder templates .
+COPY --from=builder app/compiled_app .
+COPY --from=builder app/templates .
 
 CMD [ "compiled_app" ]
