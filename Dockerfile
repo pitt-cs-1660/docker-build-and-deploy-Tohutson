@@ -6,6 +6,8 @@ COPY go.mod .
 COPY main.go .
 COPY templates ./templates
 
+RUN go mod download
+
 RUN CGO_ENABLED=0 go build -o compiled_app .
 
 FROM scratch
